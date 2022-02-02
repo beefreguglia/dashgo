@@ -1,6 +1,5 @@
 import { createServer, Factory, Model, Response } from 'miragejs';
 import faker from 'faker';
-import { number } from 'yup/lib/locale';
 
 type User = {
   name: string;
@@ -50,6 +49,7 @@ export function makeServer() {
           { users }
         );
       });
+      this.get('/users/:id');
       this.post('/users');
 
       this.namespace = '';
